@@ -1,0 +1,17 @@
+﻿@model Agio.Flights.Presentation.Models.Airport.AirportViewModel
+
+@{
+    ViewBag.Title = "Airport Edition";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h4>@ViewBag.Title</h4>
+
+@using (Html.BeginForm("Edit", "Airport", FormMethod.Post, new { @class = "needs-validation" }))
+{
+    @Html.EditorFor(mdl => mdl)
+}
+
+    <div class="text-right">
+        @Html.ActionLink("Back to List", "Index")
+    </div>

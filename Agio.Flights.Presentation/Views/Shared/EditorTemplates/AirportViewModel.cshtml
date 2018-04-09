@@ -1,0 +1,46 @@
+﻿@model Agio.Flights.Presentation.Models.Airport.AirportViewModel
+
+@Html.AntiForgeryToken()
+
+@Html.HiddenFor(mdl => mdl.Id)
+        
+<div class="form-horizontal">
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-group">
+        @Html.LabelFor(mdl => mdl.Iata, "IATA")
+        <div class="col-md-10">
+            @Html.TextBoxFor(mdl => mdl.Iata, new { @class = "form-control" })
+            @Html.ValidationMessageFor(mdl => mdl.Iata, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    
+    <div class="form-group">
+        @Html.LabelFor(mdl => mdl.Latitude)
+        <div class="col-md-10">
+            @Html.EditorFor(mdl => mdl.Latitude)
+            @Html.ValidationMessageFor(model => model.Latitude, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    
+    <div class="form-group">
+        @Html.LabelFor(mdl => mdl.Longitude)
+        <div class="col-md-10">
+            @Html.EditorFor(mdl => mdl.Longitude, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.Longitude, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    
+    <div class="form-group">
+        @Html.LabelFor(mdl => mdl.Description)
+        <div class="col-md-10">
+            @Html.TextAreaFor(mdl => mdl.Description, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Save" class="btn btn-primary" />
+        </div>
+    </div>
+</div>
