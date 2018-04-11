@@ -1,0 +1,48 @@
+﻿@using Resources;
+
+@model Agio.Flights.Presentation.Models.FlightViewModel
+
+@Html.AntiForgeryToken()
+
+@Html.HiddenFor(mdl => mdl.Id)
+        
+<div class="form-horizontal">
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-group">
+        @Html.LabelFor(mdl => mdl.OriginAirportId)
+        <div class="col-md-10">
+            @Html.DropDownListFor(mdl => mdl.OriginAirportId, (IEnumerable<SelectListItem>)ViewData["Airports"], PresentationResource.PleaseSelect, new { @class = "form-control" })
+            @Html.ValidationMessageFor(mdl => mdl.OriginAirportId, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(mdl => mdl.DestinationAirportId)
+        <div class="col-md-10">
+            @Html.DropDownListFor(mdl => mdl.DestinationAirportId, (IEnumerable<SelectListItem>)ViewData["Airports"], PresentationResource.PleaseSelect, new { @class = "form-control" })
+            @Html.ValidationMessageFor(mdl => mdl.DestinationAirportId, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(mdl => mdl.AircraftId)
+        <div class="col-md-10">
+            @Html.DropDownListFor(mdl => mdl.AircraftId, (IEnumerable<SelectListItem>)ViewData["Aircrafts"], PresentationResource.PleaseSelect, new { @class = "form-control" })
+            @Html.ValidationMessageFor(mdl => mdl.DestinationAirportId, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(mdl => mdl.Duration)
+        <div class="col-md-10">
+            @Html.TextBoxFor(mdl => mdl.Duration, new { type = "time", step = "0.1", min = "0", @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.Duration, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Save" class="btn btn-primary" />
+        </div>
+    </div>
+</div>

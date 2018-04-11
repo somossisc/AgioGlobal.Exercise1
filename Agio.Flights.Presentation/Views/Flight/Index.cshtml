@@ -1,0 +1,59 @@
+﻿@using Agio.Flights.Presentation.Models;
+@using Resources;
+
+@model IEnumerable<FlightViewModel>
+
+@{
+    ViewBag.Title = PresentationResource.FlightIndexTitle;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<p class="text-right">
+    @Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-outline-primary" })
+</p>
+<div class="table-responsive">
+    <table class="table table-striped table-sm">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.OriginAirport)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DestinationAirport)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Duration)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FuelNeeded)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Aircraft)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.OriginAirport)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DestinationAirport)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Duration)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FuelNeeded)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Aircraft)
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>

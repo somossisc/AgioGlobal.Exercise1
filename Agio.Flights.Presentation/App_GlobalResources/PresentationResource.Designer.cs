@@ -133,6 +133,24 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Flight Creation.
+        /// </summary>
+        internal static string FlightCreateTitle {
+            get {
+                return ResourceManager.GetString("FlightCreateTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Flights.
+        /// </summary>
+        internal static string FlightIndexTitle {
+            get {
+                return ResourceManager.GetString("FlightIndexTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to IATA code.
         /// </summary>
         internal static string IATA {
@@ -183,6 +201,15 @@ namespace Resources {
         internal static string ModelRequired {
             get {
                 return ResourceManager.GetString("ModelRequired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please select.
+        /// </summary>
+        internal static string PleaseSelect {
+            get {
+                return ResourceManager.GetString("PleaseSelect", resourceCulture);
             }
         }
         

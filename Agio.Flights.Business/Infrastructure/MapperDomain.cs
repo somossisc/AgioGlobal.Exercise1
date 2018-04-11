@@ -68,6 +68,9 @@ namespace Agio.Flights.Business.Infrastructure
                     .ForMember(dst => dst.AircraftId, opt => opt.MapFrom(src => src.Aircraft.Id))
                     .ForMember(dst => dst.DestinationAirportId, opt => opt.MapFrom(src => src.Destination.Id))
                     .ForMember(dst => dst.OriginAirportId, opt => opt.MapFrom(src => src.Origin.Id))
+                    .ForMember(dst => dst.Aircraft, opt => opt.Ignore())
+                    .ForMember(dst => dst.OriginAirport, opt => opt.Ignore())
+                    .ForMember(dst => dst.DestinationAirport, opt => opt.Ignore())
                     .ReverseMap()
                     .ForMember(dst => dst.Aircraft, opt => opt.MapFrom(src => new DTO.Aircraft
                     {

@@ -34,6 +34,7 @@ namespace Agio.Flights.Presentation.Infrastructure
             builder.RegisterType<HomeController>().InstancePerRequest();
             builder.RegisterType<AirportController>().InstancePerRequest();
             builder.RegisterType<AircraftController>().InstancePerRequest();
+            builder.RegisterType<FlightController>().InstancePerRequest();
 
             // MVC - Set the dependency resolver to be Autofac.
             var container = builder.Build();

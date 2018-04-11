@@ -165,4 +165,13 @@
   <data name="AirportIndexTitle" xml:space="preserve">
     <value>Airports</value>
   </data>
+  <data name="FlightCreateTitle" xml:space="preserve">
+    <value>Flight Creation</value>
+  </data>
+  <data name="FlightIndexTitle" xml:space="preserve">
+    <value>Flights</value>
+  </data>
+  <data name="PleaseSelect" xml:space="preserve">
+    <value>Please select</value>
+  </data>
 </root>

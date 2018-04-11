@@ -66,10 +66,12 @@ namespace Agio.Flights.Business.Services
         /// </summary>
         public async Task<IEnumerable<DTO.Flight>> GetAll()
         {
-            var entities = (from itm in await _repository.List()
-                            orderby itm.Time ascending //Default ordering
-                            select itm).ToList();
-            var result = _mapper.Map<IEnumerable<Flight>, IEnumerable<DTO.Flight>>(entities);
+            var result = (from itm in await _repository.List()
+                          orderby itm.Time ascending //Default ordering
+                          select _mapper.Map<Flight, DTO.Flight>(itm)).ToList();
+
+            foreach (var flight in result)
+                CalculateFuel(flight);
 
             return result;
         }

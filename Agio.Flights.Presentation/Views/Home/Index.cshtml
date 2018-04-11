@@ -3,29 +3,62 @@
 }
 
 <div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+    <h1>Agio Global .NET Specialist Test</h1>
+    <p class="lead">This is the first exercise of the proposed test.</p>
+    <p>
+        I have choosen a DDD as the pattern desing. There are three differentiated layers in the proposed solution:
+        <ul>
+            <li>DAL - Data Access Layer</li>
+            <li>Business Layer</li>
+            <li>Presentation Layer</li>
+        </ul>
+        <h3>DAL Layer</h3>
+        This layer have been made using Entity Framwork 6 with Model to Database pattern. As its name is suggesting, this is the layer responsible to access the database for obtaining
+        all necessary information and serve the next layer of the architecture: Business Layer.
+        <br />
+        <i>
+            A must 'TODO' in this layer would be the implementation of a WEB API which would be the responsible for exposing the entities improving thus the Inversion of Control of the 
+            layer. This has not been done due to a matter of duration of the test development.
+        </i>
+        <h3>Business Layer</h3>
+        In this layer we are applying all the necessary business logic: GPS Coordinates distance calculation and Fuel Needed calculation for each Flight object. This layer are exposing
+        DTOs (Data Transfer Objects) for the presentation layer abstracting it. The mapping between entities and DTOs have been done with AutoMapper nuget package.
+        <br />
+        <i>
+            A must 'TODO' in this layer would be the implementation of a WEB API which would be the responsible for exposing the DTOs improving thus the Inversion of Control of the
+            layer. This has not been done due to a matter of duration
+            of the test development.
+        </i>
+        <h3>Presentation Layer</h3>
+        This is the MVC 5 web project resposible for all the view resposabilities of the proposed solution. AutoMapper for mapping DTOs to ViewModels and Autofac for controlling the Inversion
+        of Control (or Dependency Injection) have been used in this project. You will find more information about the areas of the web below.
+    </p>
+    <p><a href="https://github.com/somossisc/AgioGlobal.Exercise1" class="btn btn-primary btn-lg">GIT HUB Repository</a></p>
 </div>
 
 <div class="row">
     <div class="col-md-4">
-        <h2>Getting started</h2>
+        <h2>Aircrafts Section</h2>
         <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
+            Gives you a list with all aircrafts created offering the "Edit" and "Delete" options for each row of the grid. A "Create" button
+            is enabling the creation of new aircrafts in the system.
         </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+        <p>@Html.ActionLink("Go", "Index", "Aircraft", new { @class = "btn btn-secondary" })</p>
     </div>
     <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+        <h2>Airport Section</h2>
+        <p>
+            Gives you a list with all airports created offering the "Edit" and "Delete" options for each row of the grid. A "Create" button
+            is enabling the creation of new airports in the system.
+        </p>
+        <p>@Html.ActionLink("Go", "Index", "Airport", new { @class = "btn btn-secondary" })</p>
     </div>
     <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+        <h2>Flights Section</h2>
+        <p>
+            Here you will find a list of the created flights of the system with demanded information. You have too a "Create" button to add 
+            new flights to the system.
+        </p>
+        <p>@Html.ActionLink("Go", "Index", "Flight", new { @class = "btn btn-secondary" })</p>
     </div>
 </div>

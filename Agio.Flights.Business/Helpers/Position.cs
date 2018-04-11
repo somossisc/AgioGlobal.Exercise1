@@ -8,6 +8,15 @@ namespace Agio.Flights.Business.Domain.Helpers
     /// </summary>
     public class Position : IPosition
     {
+        #region Constants
+
+        /// <summary>
+        /// The earth radio distance in kilometers
+        /// </summary>
+        public const double EARTH_RADIO = 6372.8;
+
+        #endregion
+
         #region Properties
 
         /// <summary>
@@ -30,25 +39,36 @@ namespace Agio.Flights.Business.Domain.Helpers
         /// <param name="latitude">The latitude</param>
         /// <param name="longitude">The longitude</param>
         /// <returns>
-        /// Returns the distance in meters
+        /// Returns the distance in kilometers
         /// </returns>
+        /// <remarks>
+        /// Based on the <seealso cref="https://en.wikipedia.org/wiki/Haversine_formula">Harvesine Formula</seealso>
+        /// </remarks>
         public double Distance(double latitude, double longitude)
         {
-            var baseRad = Math.PI * Latitude / 180;
-            var targetRad = Math.PI * latitude / 180;
-            var theta = Longitude - longitude;
-            var thetaRad = Math.PI * theta / 180;
+            //Calculate distances between origin and destinations latitudes and logitudes
+            var latDis = ToRadians(Latitude - latitude);
+            var lonDis = ToRadians(Longitude - longitude);
 
-            var result = Math.Sin(baseRad) * Math.Sin(targetRad) + Math.Cos(baseRad) *
-                         Math.Cos(targetRad) * Math.Cos(thetaRad);
+            //Convert current Latitudes to Radians
+            var latOri = ToRadians(Latitude);
+            var latDes = ToRadians(latitude);
 
-            result = Math.Acos(result);
+            var a = Math.Sin(latDis / 2.0) * Math.Sin(latDis / 2.0) + Math.Sin(lonDis / 2.0) * Math.Sin(lonDis / 2.0) * Math.Cos(latOri) * Math.Cos(latDes);
+            var c = 2.0 * Math.Asin(Math.Sqrt(a));
 
-            result = result * 180 / Math.PI;
-            result = result * 60 * 1.609344; // Convert to Kilometers
-            result = result * 1000D; // Convert to meters
+            var result = EARTH_RADIO * 2.0 * Math.Asin(Math.Sqrt(a));
 
             return result;
+        }
+
+        /// <summary>
+        /// Converts an angle to radians
+        /// </summary>
+        /// <param name="angle">The angle to convert</param>
+        public static double ToRadians(double angle)
+        {
+            return Math.PI * angle / 180.0;
         }
 
         #endregion
