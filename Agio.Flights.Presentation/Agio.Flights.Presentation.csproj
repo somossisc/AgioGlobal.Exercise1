@@ -136,6 +136,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AircraftController.cs" />
     <Compile Include="Controllers\AirportController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
@@ -143,7 +144,8 @@
     </Compile>
     <Compile Include="Infrastructure\DependencyInjection.cs" />
     <Compile Include="Infrastructure\Mapping.cs" />
-    <Compile Include="Models\Airport\AirportViewModel.cs" />
+    <Compile Include="Models\AircraftViewModel.cs" />
+    <Compile Include="Models\AirportViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -230,10 +232,14 @@
     <Content Include="Views\Airport\Index.cshtml" />
     <Content Include="Views\Airport\Edit.cshtml" />
     <Content Include="Views\Airport\Delete.cshtml" />
+    <Content Include="Views\Aircraft\Create.cshtml" />
+    <Content Include="Views\Aircraft\Delete.cshtml" />
+    <Content Include="Views\Aircraft\Edit.cshtml" />
+    <Content Include="Views\Aircraft\Index.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\AircraftViewModel.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Aircraft\" />
     <Folder Include="Views\Base\" />
   </ItemGroup>
   <ItemGroup>

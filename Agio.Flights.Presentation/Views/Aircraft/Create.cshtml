@@ -1,0 +1,23 @@
+﻿@using Resources;
+
+@model Agio.Flights.Presentation.Models.AircraftViewModel
+
+@{
+    ViewBag.Title = PresentationResource.AircraftCreateTitle;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h4>@ViewBag.Title</h4>
+
+@using (Html.BeginForm("Create", "Aircraft", FormMethod.Post, new { @class = "needs-validation" }))
+{
+    @Html.EditorFor(mdl => mdl)
+}
+
+<div class="text-right">
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

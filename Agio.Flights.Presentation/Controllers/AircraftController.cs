@@ -7,11 +7,11 @@ using System.Web.Mvc;
 
 namespace Agio.Flights.Presentation.Controllers
 {
-    public class AirportController : Controller
+    public class AircraftController : Controller
     {
         #region Attributes
 
-        private readonly IAirportService _service;
+        private readonly IAircraftService _service;
 
         #endregion
 
@@ -21,7 +21,7 @@ namespace Agio.Flights.Presentation.Controllers
         /// Initializes a new instance of the current class with the specified parameters
         /// </summary>
         /// <param name="service">The service to access necessary data</param>
-        public AirportController(IAirportService service)
+        public AircraftController(IAircraftService service)
             : base()
         {
             _service = service;
@@ -33,10 +33,11 @@ namespace Agio.Flights.Presentation.Controllers
 
         #region GET Actions
 
+        // GET: Airport
         [HttpGet]
         public async Task<ActionResult> Index()
         {
-            var model = await GetAirports();
+            var model = await GetAircrafts();
 
             return View(model);
         }
@@ -49,14 +50,14 @@ namespace Agio.Flights.Presentation.Controllers
 
         public async Task<ActionResult> Edit(int id)
         {
-            var model = await GetAirport(id);
+            var model = await GetAircraft(id);
 
             return View(model);
         }
 
         public async Task<ActionResult> Delete(int id)
         {
-            var model = await GetAirport(id);
+            var model = await GetAircraft(id);
 
             return View(model);
         }
@@ -66,11 +67,11 @@ namespace Agio.Flights.Presentation.Controllers
         #region POST Actions
 
         [HttpPost]
-        public async Task<ActionResult> Create([Bind(Exclude = "Id")] AirportViewModel model)
+        public async Task<ActionResult> Create([Bind(Exclude = "Id")] AircraftViewModel model)
         {
             if (model != null && ModelState.IsValid)
             {
-                var entity = Mapper.Map<Business.DTO.Airport>(model);
+                var entity = Mapper.Map<Business.DTO.Aircraft>(model);
 
                 await _service.Create(entity);
             }
@@ -79,11 +80,11 @@ namespace Agio.Flights.Presentation.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult> Edit(AirportViewModel model)
+        public async Task<ActionResult> Edit(AircraftViewModel model)
         {
             if (model != null && ModelState.IsValid)
             {
-                var entity = Mapper.Map<Business.DTO.Airport>(model);
+                var entity = Mapper.Map<Business.DTO.Aircraft>(model);
 
                 await _service.Edit(entity);
             }
@@ -92,7 +93,7 @@ namespace Agio.Flights.Presentation.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult> Delete(int id, AirportViewModel model)
+        public async Task<ActionResult> Delete(int id, AircraftViewModel model)
         {
             var entity = await _service.Read(id);
 
@@ -107,18 +108,18 @@ namespace Agio.Flights.Presentation.Controllers
 
         #region Private Methods
 
-        private async Task<AirportViewModel> GetAirport(int id)
+        private async Task<AircraftViewModel> GetAircraft(int id)
         {
             var entity = await _service.Read(id);
-            var result = Mapper.Map<AirportViewModel>(entity);
+            var result = Mapper.Map<AircraftViewModel>(entity);
 
             return result;
         }
 
-        private async Task<IEnumerable<AirportViewModel>> GetAirports()
+        private async Task<IEnumerable<AircraftViewModel>> GetAircrafts()
         {
             var entities = await _service.GetAll();
-            var result = Mapper.Map<IEnumerable<AirportViewModel>>(entities);
+            var result = Mapper.Map<IEnumerable<AircraftViewModel>>(entities);
 
             return result;
         }

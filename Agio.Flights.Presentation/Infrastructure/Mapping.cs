@@ -1,5 +1,5 @@
 ﻿using Agio.Flights.Business.Domain.Helpers;
-using Agio.Flights.Presentation.Models.Airport;
+using Agio.Flights.Presentation.Models;
 using AutoMapper;
 
 namespace Agio.Flights.Presentation.Infrastructure
@@ -17,6 +17,10 @@ namespace Agio.Flights.Presentation.Infrastructure
                     .ForMember(dst => dst.Longitude, opt => opt.MapFrom(src => src.Position.Longitude))
                     .ReverseMap()
                     .ForMember(dst => dst.Position, opt => opt.MapFrom(src => new Position { Latitude = src.Latitude, Longitude = src.Longitude }));
+                cfg.CreateMap<Business.DTO.Aircraft, AircraftViewModel>()
+                    .ForMember(dst => dst.ModelName, opt => opt.MapFrom(src => src.Model))
+                    .ReverseMap()
+                    .ForMember(dst => dst.Model, opt => opt.MapFrom(src => src.ModelName));
             });
         }
 

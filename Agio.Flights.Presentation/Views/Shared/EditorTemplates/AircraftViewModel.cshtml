@@ -1,0 +1,30 @@
+﻿@model Agio.Flights.Presentation.Models.AircraftViewModel
+
+@Html.AntiForgeryToken()
+
+@Html.HiddenFor(mdl => mdl.Id)
+        
+<div class="form-horizontal">
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-group">
+        @Html.LabelFor(mdl => mdl.ModelName)
+        <div class="col-md-10">
+            @Html.TextBoxFor(mdl => mdl.ModelName, new { @class = "form-control" })
+            @Html.ValidationMessageFor(mdl => mdl.ModelName, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    
+    <div class="form-group">
+        @Html.LabelFor(mdl => mdl.TakeoffEffort)
+        <div class="col-md-10">
+            @Html.TextBoxFor(mdl => mdl.TakeoffEffort, new { type = "number", step = "0.1", min = "0", @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.TakeoffEffort, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Save" class="btn btn-primary" />
+        </div>
+    </div>
+</div>

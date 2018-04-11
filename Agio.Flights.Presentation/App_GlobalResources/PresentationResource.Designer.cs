@@ -61,6 +61,78 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Aircraft Creation.
+        /// </summary>
+        internal static string AircraftCreateTitle {
+            get {
+                return ResourceManager.GetString("AircraftCreateTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Aircraft Deletion.
+        /// </summary>
+        internal static string AircraftDeleteTitle {
+            get {
+                return ResourceManager.GetString("AircraftDeleteTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Aircraft Edition.
+        /// </summary>
+        internal static string AircraftEditTitle {
+            get {
+                return ResourceManager.GetString("AircraftEditTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Aircrafts.
+        /// </summary>
+        internal static string AircraftIndexTitle {
+            get {
+                return ResourceManager.GetString("AircraftIndexTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Airport Creation.
+        /// </summary>
+        internal static string AirportCreateTitle {
+            get {
+                return ResourceManager.GetString("AirportCreateTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Airport Deletion.
+        /// </summary>
+        internal static string AirportDeleteTitle {
+            get {
+                return ResourceManager.GetString("AirportDeleteTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Airport Edition.
+        /// </summary>
+        internal static string AirportEditTitle {
+            get {
+                return ResourceManager.GetString("AirportEditTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Airports.
+        /// </summary>
+        internal static string AirportIndexTitle {
+            get {
+                return ResourceManager.GetString("AirportIndexTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to IATA code.
         /// </summary>
         internal static string IATA {
@@ -102,6 +174,33 @@ namespace Resources {
         internal static string LongitudeRequired {
             get {
                 return ResourceManager.GetString("LongitudeRequired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The model is required.
+        /// </summary>
+        internal static string ModelRequired {
+            get {
+                return ResourceManager.GetString("ModelRequired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Takeoff Effort.
+        /// </summary>
+        internal static string TakeoffEffort {
+            get {
+                return ResourceManager.GetString("TakeoffEffort", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The takeoff effort is required.
+        /// </summary>
+        internal static string TakeOffEffortRequired {
+            get {
+                return ResourceManager.GetString("TakeOffEffortRequired", resourceCulture);
             }
         }
     }

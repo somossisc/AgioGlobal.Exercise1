@@ -1,4 +1,5 @@
 ﻿using Agio.Flights.Presentation.Infrastructure;
+using System;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Optimization;
@@ -16,6 +17,11 @@ namespace Agio.Flights.Presentation
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             Mapping.Configure();
+        }
+
+        protected void Application_Error(object sender, EventArgs e)
+        {
+
         }
     }
 }
