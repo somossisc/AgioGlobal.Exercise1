@@ -132,4 +132,37 @@
   <data name="LongitudeRequired" xml:space="preserve">
     <value>The longitude is required</value>
   </data>
+  <data name="ModelRequired" xml:space="preserve">
+    <value>The model is required</value>
+  </data>
+  <data name="TakeoffEffort" xml:space="preserve">
+    <value>Takeoff Effort</value>
+  </data>
+  <data name="TakeOffEffortRequired" xml:space="preserve">
+    <value>The takeoff effort is required</value>
+  </data>
+  <data name="AircraftCreateTitle" xml:space="preserve">
+    <value>Aircraft Creation</value>
+  </data>
+  <data name="AircraftDeleteTitle" xml:space="preserve">
+    <value>Aircraft Deletion</value>
+  </data>
+  <data name="AircraftEditTitle" xml:space="preserve">
+    <value>Aircraft Edition</value>
+  </data>
+  <data name="AirportCreateTitle" xml:space="preserve">
+    <value>Airport Creation</value>
+  </data>
+  <data name="AirportDeleteTitle" xml:space="preserve">
+    <value>Airport Deletion</value>
+  </data>
+  <data name="AirportEditTitle" xml:space="preserve">
+    <value>Airport Edition</value>
+  </data>
+  <data name="AircraftIndexTitle" xml:space="preserve">
+    <value>Aircrafts</value>
+  </data>
+  <data name="AirportIndexTitle" xml:space="preserve">
+    <value>Airports</value>
+  </data>
 </root>

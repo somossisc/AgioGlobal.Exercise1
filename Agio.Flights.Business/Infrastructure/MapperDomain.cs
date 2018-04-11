@@ -54,7 +54,7 @@ namespace Agio.Flights.Business.Infrastructure
         {
             _config = new MapperConfiguration(cfg =>
             {
-                cfg.CreateMap<DTO.Aircraft, Flight>().ReverseMap();
+                cfg.CreateMap<DTO.Aircraft, Aircraft>().ReverseMap();
                 cfg.CreateMap<DTO.Airport, Airport>()
                     .ForMember(dst => dst.Latitude, opt => opt.MapFrom(src => src.Position.Latitude))
                     .ForMember(dst => dst.Longitude, opt => opt.MapFrom(src => src.Position.Longitude))
